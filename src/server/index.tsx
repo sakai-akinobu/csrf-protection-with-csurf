@@ -1,11 +1,13 @@
 import express from 'express';
 import {renderToString} from 'react-dom/server';
+import cookieParser from 'cookie-parser';
 
 import {Html} from '../components/Html';
 import {App} from '../components/App';
 
 const app = express();
 
+app.use(cookieParser());
 app.use(express.static('built'));
 
 app.get('/', (_, res) => {
