@@ -14,5 +14,9 @@ app.get('/', (_, res) => {
   );
 });
 
+app.post('/api', (_, res) => {
+  res.send('ok');
+});
+
 const PORT = 3000;
 app.listen(PORT, () => console.log('Server started.'));
