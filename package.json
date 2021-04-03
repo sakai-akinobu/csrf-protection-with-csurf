@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm run clean && npm run build:client && npm run build:server",
+    "build:client": "webpack --config ./webpack/client.js",
+    "build:server": "webpack --config ./webpack/server.js",
+    "clean": "rm -rf built/*.js",
     "start": "ts-node src/server/app.tsx"
   },
   "author": "Akinobu SAKAI <sakai.akinobu@gmail.com> (https://github.com/sakai-akinobu)",

@@ -6,7 +6,6 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "noEmit": true,
   },
   "include": [
     "src",
