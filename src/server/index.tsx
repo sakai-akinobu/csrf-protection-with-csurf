@@ -1,12 +1,17 @@
 import express from 'express';
 import {renderToString} from 'react-dom/server';
 
+import {Html} from '../components/Html';
 import {App} from '../components/App';
 
 const app = express();
 
+app.use(express.static('built'));
+
 app.get('/', (_, res) => {
-  res.send(renderToString(<App />));
+  res.send(
+    renderToString(<Html><App /></Html>)
+  );
 });
 
 const PORT = 3000;
