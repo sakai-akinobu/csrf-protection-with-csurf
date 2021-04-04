@@ -1,11 +1,12 @@
 import {useState, useEffect} from 'react';
+import {parse as cookieParse} from 'cookie';
 
 export const App: React.FC = () => {
-  const [cookie, setCookie] = useState('');
+  const [csrfSecret, setCsrfSecret] = useState('');
   const [csrfToken, setCsrfToken] = useState('');
 
   useEffect(() => {
-    setCookie(document.cookie);
+    setCsrfSecret(cookieParse(document.cookie).csrf_secret || '');
     setCsrfToken(document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '');
   }, []);
 
@@ -43,10 +44,10 @@ export const App: React.FC = () => {
       <button onClick={createEventHandler({credentials: 'omit'})}>
         Missing token secret
       </button>
-      {cookie &&
+      {csrfSecret &&
         <div>
-          <h4>Cookie</h4>
-          <pre>{cookie}</pre>
+          <h4>Secret Token</h4>
+          <pre>{csrfSecret}</pre>
         </div>
       }
       {fetchOptions &&
