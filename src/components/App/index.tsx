@@ -44,6 +44,12 @@ export const App: React.FC = () => {
       <button onClick={createEventHandler({credentials: 'omit'})}>
         Missing token secret
       </button>
+      {csrfToken &&
+        <div>
+          <h4>CSRF Token</h4>
+          <pre>{csrfToken}</pre>
+        </div>
+      }
       {csrfSecret &&
         <div>
           <h4>Secret Token</h4>
