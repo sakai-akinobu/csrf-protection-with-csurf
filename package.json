@@ -8,7 +8,7 @@
     "build:client": "webpack --config ./webpack/client.js",
     "build:server": "webpack --config ./webpack/server.js",
     "clean": "rm -rf built/*.js",
-    "start": "node built/server.js"
+    "start": "npm run build && node built/server.js"
   },
   "author": "Akinobu SAKAI <sakai.akinobu@gmail.com> (https://github.com/sakai-akinobu)",
   "license": "MIT",
