@@ -25,7 +25,7 @@ app.get('/', csrfProtection, (req, res) => {
   );
 });
 
-app.post('/api', (_, res) => {
+app.post('/api', csrfProtection, (_, res) => {
   res.send('ok');
 });
 
