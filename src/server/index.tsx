@@ -30,4 +30,4 @@ app.post('/api', csrfProtection, (_, res) => {
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log('Server started.'));
+app.listen(PORT, () => console.log(`Server started. http://localhost:${PORT}`));
