@@ -33,6 +33,7 @@ export const App: React.FC = () => {
 
   return (
     <div>
+      <h2>CSRF-Protection using csurf</h2>
       <button onClick={createEventHandler()}>
         Valid request
       </button>
